@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <H1>Giá hoa quả</H1>
+    <select id="select">
+        <option value="Ổi">Ổi</option>
+        <option value="Dưa Hấu">Dưa Hấu</option>
+        <option value="Táo">Táo</option>
+        <option value="Xoài">Xoài</option>
+        <option value="Cam">Cam</option>
+        <option value="Chôm Chôm">Chôm Chôm</option>
+        <option value="Măng Cụt">Măng Cụt</option>
+    </select>
+    <button type="button" onclick="myfunction()">Xem Giá</button>
+    <p id="display">0</p>
+    <script>
+        function myfunction() {
+            let key = document.getElementById("select").value
+            let amout = 0
+            switch (key) {
+                case "Ổi":
+                case "Dưa Hấu":
+                    amout = 20000
+                    break
+                case "Táo":
+                case "Xoài":
+                    amout = 30000
+                    break
+                case "Cam":
+                case "Chôm Chôm":
+                    amout = 40000
+                    break
+                case "Măng Cụt":
+                    amout = 50000
+                    break
+            }
+            document.getElementById("display").innerHTML = amout + "" + "VND/Kg"
+        }
+    </script>
+</body>
+
+</html>
