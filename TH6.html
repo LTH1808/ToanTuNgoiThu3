@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Nhập Năm </h1>
+    <input type="number" id="year" onchange="myfunction()" >
+    <p id="amlich" ></p>
+
+    <script>
+        function myfunction(params) {
+            let calendar = +document.getElementById("year").value
+            let can = calendar % 10
+            let chi = calendar % 12
+            console.log(can)
+            console.log(chi)
+            let print
+            let print2
+            switch (can) {
+                case 0:
+                    print = "Canh"
+                    break;
+                case 1:
+                    print = "Tân"
+                    break;
+                case 2:
+                    print = "Nhuận"
+                    break;
+                case 3:
+                    print = "Quý "
+                    break;
+                case 4:
+                    print = "Giáp"
+                    break;
+                case 5:
+                    print = "Ất"
+                    break;
+                case 6:
+                    print = "Bình"
+                    break;
+                case 7:
+                    print = "Đinh"
+                    break;
+                case 8:
+                    print = "Mậu"
+                    break;
+                case 9:
+                    print = "Kỳ"
+                    break;
+            }
+            switch (chi) {
+                case 0:
+                    print2 = "Thân"
+                    break;
+                case 1:
+                    print2 = "Dậu"
+                    break;
+                case 2:
+                    print2 = "Tuất"
+                    break;
+                case 3:
+                    print2 = "Hợi "
+                    break;
+                case 4:
+                    print2 = "Tý"
+                    break;
+                case 5:
+                    print2 = "Sửu"
+                    break;
+                case 6:
+                    print2 = "Dần"
+                    break;
+                case 7:
+                    print2 = "Mẹo"
+                    break;
+                case 8:
+                    print2 = "Thìn"
+                    break;
+                case 9:
+                    print2 = "Tỵ"
+                    break;
+                case 10:
+                    print2 = "Ngọ"
+                    break;
+                case 11:
+                    print2 = "Mùi"
+                    break;
+            }
+            let result = print + " " + print2
+            document.getElementById("amlich").innerHTML = " Năm âm lịch" + " " + result
+        }
+
+
+    </script>
+</body>
+
+</html>
