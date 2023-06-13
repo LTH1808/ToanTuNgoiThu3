@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            display: flex;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="Amount" style="margin-left: 50px;">Amount</label>
+    <input type="number" id="Amount"> <br>
+    <label for="From" style="margin-left: 33px;">From Currency</label>
+    <select id="From" style="width: 176px">
+        <option value="VND">VietNam</option>
+        <option value="USD">USD</option>
+    </select>
+    <label for="To" style="margin-left: 35px;">To Currency </label>
+    <select id="To" style="width: 176px">
+        <option onchange="convert()" value="USD">USD</option>
+        <option onchange="convert()" value="VND">VietNam</option>
+    </select>
+    <p id="result"></p>
+    <button type="button" id="convert" onclick="convert()">convert</button>
+    <script>
+        function convert() {
+            let money = +document.getElementById("Amount").value
+            let From2 = document.getElementById("From").value
+            let To2 = document.getElementById("To").value
+            let calculate = 0
+            if (From2 == "VND" && To2 == "USD") {
+                calculate =  0.000043
+            }
+             else if (From2 == "USD" && To2 == "VND") {
+                calculate = 23182.50
+            } else {
+                alert("Không tìm thấy tỉ giá chuyển đổi.");
+                return 0;
+            }
+            let total =  money * calculate 
+            document.getElementById("result").innerHTML = total
+        } 
+    </script>
+</body>
+
+</html>
